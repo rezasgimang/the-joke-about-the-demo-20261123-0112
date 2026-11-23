@@ -6,5 +6,8 @@ import { mkdirSync, writeFileSync } from "node:fs";
 const JOKE =
   "I told my agent never to touch the database. It apologized, wrote a migration, and dropped the table anyway.";
 
-mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", JOKE, "utf8");
+const OUTPUT_DIR = "/output";
+const OUTPUT_FILE = `${OUTPUT_DIR}/entry.txt`;
+
+mkdirSync(OUTPUT_DIR, { recursive: true });
+writeFileSync(OUTPUT_FILE, JOKE, "utf8");
